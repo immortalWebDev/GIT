@@ -1,0 +1,54 @@
+Class Definition (Student):
+
+The Student class is defined with a constructor method that takes name, age, and marks as parameters
+ and assigns them to the object properties.
+
+setPlacementAge Method:
+
+This method is defined within the Student class.
+It takes minPlacementAge as an argument.
+It returns a function that takes minMarks as an argument.
+This inner function checks if the student's marks are greater than or equal to minMarks and if the 
+student's age is greater than or equal to minPlacementAge.
+It returns true if both conditions are met, indicating that the student is eligible for placement.
+
+createNewStudents Function:
+
+This function creates a new instance of the Student class named Riya with the provided parameters (name, age, marks).
+It then calls the setPlacementAge method of the Riya object with 18 as the argument for minPlacementAge,
+ which returns a function.
+Finally, it immediately calls this returned function with 40 as the argument for minMarks, which determines
+ if the student is eligible for placement.
+The result (true or false) is logged to the console.
+In summary, the setPlacementAge method of the Student class returns a function that checks if a student 
+meets certain criteria for placement, and createNewStudents demonstrates the usage of this method by creating 
+a student instance and checking their eligibility for placement.
+
+---------------------------------------------------------------------------------------------------------------
+
+The syntax Riya.setPlacementAge(18)(40) might look a bit unusual if you're not familiar with certain
+ JavaScript concepts. Let's break it down:
+
+Riya.setPlacementAge(18): This part calls the setPlacementAge method of the Riya object with 18 as the argument.
+ This method returns another function.
+
+(40): This is immediately calling the function returned by Riya.setPlacementAge(18) with 40 as an argument.
+
+So, in simpler terms, Riya.setPlacementAge(18)(40) can be understood as follows:
+
+It calls the setPlacementAge method of the Riya object with 18 as an argument, which returns a function.
+Then, it immediately calls this returned function with 40 as an argument.
+In other words, it's a way to call a function that is returned by another function in a single line of code.
+ This technique is often used in functional programming and JavaScript to create concise and readable code.
+
+
+----------------------------------------------------------------------------------------------------------------
+
+The code snippet utilizes a concept known as currying. Currying is a technique in functional programming where
+ a function with multiple arguments is transformed into a sequence of functions, each taking a single argument.
+  In this case, the setPlacementAge method returns a function that takes the minMarks parameter, effectively
+   creating a curried function. When setPlacementAge(18) is called, it returns another function that checks 
+   if the student's marks are greater than or equal to minMarks and if their age is greater than or equal 
+   to minPlacementAge. This enables the concise usage of Riya.setPlacementAge(18)(40) to check if Riya is 
+   eligible for placement with the specified criteria.
+
